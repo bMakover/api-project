@@ -1,0 +1,122 @@
+[
+    {
+      "name": "Plushie Panda",
+      "info": "Soft and cuddly panda plushie, perfect for kids and panda enthusiasts alike.",
+      "category": "Stuffed Animals",
+      "image": "plushie_panda.jpg",
+      "price": 19.99,
+      "user_id": 101
+    },
+    {
+      "name": "LEGO City Police Station",
+      "info": "Build and protect the city with this detailed police station LEGO set.",
+      "category": "Building Blocks",
+      "image": "lego_police_station.jpg",
+      "price": 49.99,
+      "user_id": 102
+    },
+    {
+      "name": "Barbie Dreamhouse",
+      "info": "A dream come true for Barbie fans - a fully furnished dreamhouse for endless play.",
+      "category": "Dolls & Accessories",
+      "image": "barbie_dreamhouse.jpg",
+      "price": 129.99,
+      "user_id": 103
+    },
+    {
+      "name": "Nerf N-Strike Elite Disruptor Blaster",
+      "info": "Fire away with this quick-draw blaster that shoots darts up to 90 feet.",
+      "category": "Outdoor Play",
+      "image": "nerf_blaster.jpg",
+      "price": 24.99,
+      "user_id": 104
+    },
+    {
+      "name": "Melissa & Doug Wooden Chef’s Kitchen",
+      "info": "Wooden pretend-play kitchen set for little chefs to cook up imaginative meals.",
+      "category": "Pretend Play",
+      "image": "chef_kitchen.jpg",
+      "price": 79.99,
+      "user_id": 105
+    },
+    {
+      "name": "Fisher-Price Think & Learn Code-a-Pillar",
+      "info": "Educational toy that encourages critical thinking and problem-solving skills in kids.",
+      "category": "Educational Toys",
+      "image": "code_a_pillar.jpg",
+      "price": 39.99,
+      "user_id": 106
+    },
+    {
+      "name": "Hot Wheels Super Ultimate Garage Playset",
+      "info": "The ultimate playset for car enthusiasts - park, tune, and race with this Hot Wheels garage.",
+      "category": "Vehicle Playsets",
+      "image": "hot_wheels_garage.jpg",
+      "price": 99.99,
+      "user_id": 107
+    },
+    {
+      "name": "Baby Einstein Magic Touch Piano",
+      "info": "Introduce music to toddlers with this wooden piano featuring magic touch technology.",
+      "category": "Musical Toys",
+      "image": "magic_touch_piano.jpg",
+      "price": 29.99,
+      "user_id": 108
+    },
+    {
+      "name": "L.O.L. Surprise! O.M.G. Doll",
+      "info": "Unbox a surprise fashion doll with stunning features and accessories.",
+      "category": "Collectible Dolls",
+      "image": "lol_doll.jpg",
+      "price": 34.99,
+      "user_id": 109
+    },
+    {
+      "name": "Play-Doh Kitchen Creations Ice Cream Set",
+      "info": "Create colorful Play-Doh ice cream treats with this fun kitchen set.",
+      "category": "Creative Arts",
+      "image": "playdoh_icecream_set.jpg",
+      "price": 14.99,
+      "user_id": 110
+    },
+    {
+      "name": "Marvel Avengers Hero Action Figures",
+      "info": "Collectible action figures featuring iconic Marvel Avengers superheroes.",
+      "category": "Action Figures",
+      "image": "avengers_action_figures.jpg",
+      "price": 39.99,
+      "user_id": 111
+    },
+    {
+      "name": "VTech Smart Shots Sports Center",
+      "info": "Interactive sports toy introducing basketball and soccer for active play.",
+      "category": "Active Play",
+      "image": "vtech_sports_center.jpg",
+      "price": 39.99,
+      "user_id": 112
+    },
+    {
+      "name": "Paw Patrol Ultimate Rescue Fire Truck",
+      "info": "Join the Paw Patrol on rescue missions with this interactive fire truck toy.",
+      "category": "Preschool Vehicles",
+      "image": "paw_patrol_fire_truck.jpg",
+      "price": 59.99,
+      "user_id": 113
+    },
+    {
+      "name": "Disney Frozen 2 Elsa Musical Doll",
+      "info": "A musical Elsa doll from Disney's Frozen 2, perfect for Frozen fans.",
+      "category": "Movie & TV Characters",
+      "image": "frozen_elsa_doll.jpg",
+      "price": 24.99,
+      "user_id": 114
+    },
+    {
+      "name": "Fisher-Price Corn Popper Push Toy",
+      "info": "Classic push-along toy that creates exciting popping sounds as kids walk.",
+      "category": "Classic Toys",
+      "image": "corn_popper_toy.jpg",
+      "price": 9.99,
+      "user_id": 115
+    }
+  ]
