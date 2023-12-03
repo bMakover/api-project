@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>API Documentation</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif; /* Cute font */
+      background-color: #f8f8f8; /* Pleasant background color */
+      margin: 40px;
+    }
+  
+    header h1{
+      color:white;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 60%; /* Table width adjusted to 60% */
+      margin: 20px auto; /* Center table */
+      border-collapse: collapse;
+      background-color: #fff; /* White background for table */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for table */
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<header>
+<h1>Toy API Documentation</h1>
+
+</header>
+<h1>Toy API Endpoints</h1>
+
+<table>
+  <tr>
+    <th>Endpoint</th>
+    <th>Method</th>
+    <th>Description</th>
+    <th>Authorization</th>
+    <th>Parameters / Query</th>
+  </tr>
+ 
+  <tr>
+    <td>/toys</td>
+    <td>GET</td>
+    <td>Fetches a paginated list of toys.</td>
+    <td></td>
+    <td>perPage (default: 10), page (default: 1)</td>
+  </tr>
+  <tr>
+    <td>/toys/search</td>
+    <td>GET</td>
+    <td>Searches for toys based on name or info.</td>
+    <td></td>
+    <td>s (search term)</td>
+  </tr>
+
+
+  <tr>
+    <td>/toys/category/:category</td>
+    <td>GET</td>
+    <td>Retrieves toys of a specific category.</td>
+    <td></td>
+    <td>category</td>
+  </tr>
+
+
+  <tr>
+    <td>/toys/single/:id</td>
+    <td>GET</td>
+    <td>Fetches a single toy by its ID.</td>
+    <td></td>
+    <td>id</td>
+  </tr>
+  <tr>
+  
+    <td>/toys/prices</td>
+    <td>GET</td>
+    <td>Retrieves toys within a specified price range.</td>
+    <td></td>
+    <td>min (minimum price), max (maximum price), perPage (default: 10), page (default: 1)</td>
+  </tr>
+
+
+
+  <tr>
+    <td>/toys</td>
+    <td>POST</td>
+    <td>Creates a new toy.</td>
+    <td>Required</td>
+    <td>Toy information</td>
+  </tr>
+
+  <tr>
+    <td>/toys/:editId</td>
+    <td>PUT</td>
+    <td>Updates an existing toy by ID.</td>
+    <td>Required</td>
+    <td>Updated toy information</td>
+  </tr>
+
+  <tr>
+    <td>/toys/:delId</td>
+    <td>DELETE</td>
+    <td>Deletes a toy by ID.</td>
+    <td>Required</td>
+    <td>delId (toy ID)</td>
+  </tr>
+</table>
+
+<h1>User API Endpoints</h1>
+<table>
+  <tr>
+    <th>Endpoint</th>
+    <th>Method</th>
+    <th>Description</th>
+    <th>Authorization</th>
+    <th>Parameters / Query</th>
+  </tr>
+ 
+  <tr>
+    <td>/users</td>
+    <td>GET</td>
+    <td>Displays a message confirming user operations.</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>/users/myInfo</td>
+    <td>GET</td>
+    <td>Retrieves the information of the authenticated user.</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>/users/usersList</td>
+    <td>GET</td>
+    <td>Retrieves a list of users.</td>
+    <td>Required for admin users</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>/users</td>
+    <td>POST</td>
+    <td>Registers a new user.</td>
+    <td></td>
+    <td>User information</td>
+  </tr>
+  <tr>
+    <td>/users/login</td>
+    <td>POST</td>
+    <td>Authenticates a user and generates a token for authorization.</td>
+    <td></td>
+    <td>User login credentials</td>
+  </tr>
+
+</table>
+
+</body>
+</html>
