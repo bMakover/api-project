@@ -8,20 +8,9 @@ router.get("/", async (req, res) => {
   let page = req.query.page || 1;
 
   try {
-    let queryS = req.query.s;
-    let searchQuery = {};
+    
 
-    if (queryS) {
-      let searchReg = new RegExp(queryS, "i");
-      searchQuery = {
-        $or: [
-          { name: searchReg }, 
-          { info: searchReg }, 
-        ],
-      };
-    }
-
-    let data = await ToysModel.find(searchQuery)
+    let data = await ToysModel.find({})
       .limit(perPage)
       .skip((page - 1) * perPage)
       .sort({ _id: -1 });
@@ -33,8 +22,25 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/search", async (req, res) => {
+  try {
+    let queryS = req.query.s;
+    let searchReg = new RegExp(queryS, "i");
 
-router.get("/:category",async(req,res) => {
+    let data = await ToysModel.find({
+      $or: [
+        { name: searchReg }, // Search in the 'name' property
+        { info: searchReg }, // Search in the 'info' property
+      ],
+    }).limit(50);
+
+    res.json(data);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ msg: "there error try again later", err });
+  }
+});
+router.get("/category/:category",async(req,res) => {
   try{
     let category = req.params.category;
   
@@ -62,6 +68,33 @@ router.get("/single/:id",async(req,res) => {
     res.status(500).json({msg:"there error try again later",err})
   }
 })
+router.get("/prices", async (req, res) => {
+  let perPage = req.query.perPage || 10;
+  let page = req.query.page || 1;
+  let minPrice = req.query.min;
+  let maxPrice = req.query.max;
+
+  try {
+    let priceQuery = {};
+
+    if (minPrice && maxPrice) {
+      priceQuery = {
+        price: { $gte: parseInt(minPrice), $lte: parseInt(maxPrice) },
+      };
+    }
+
+    let data = await ToysModel.find(priceQuery)
+      .limit(perPage)
+      .skip((page - 1) * perPage)
+      .sort({ _id: -1 });
+
+    res.json(data);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ msg: "there error try again later", err });
+  }
+});
+
 router.post("/", auth,async(req,res) => {
   let validBody = validateToy(req.body);
   if(validBody.error){
