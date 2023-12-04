@@ -29,8 +29,8 @@ router.get("/search", async (req, res) => {
 
     let data = await ToysModel.find({
       $or: [
-        { name: searchReg }, // Search in the 'name' property
-        { info: searchReg }, // Search in the 'info' property
+        { name: searchReg }, 
+        { info: searchReg }, 
       ],
     }).limit(50);
 
@@ -43,10 +43,17 @@ router.get("/search", async (req, res) => {
 router.get("/category/:category",async(req,res) => {
   try{
     let category = req.params.category;
-  
+    if (!category) {
+      return res.status(400).json({ msg: "No category provided" });
+    }
     let searchReg = new RegExp(category,"i")
     let data = await ToysModel.find({category:searchReg})
+    
     .limit(50)
+    
+    if (data.length==0) {
+      return res.status(404).json({ msg: "No data found for the provided category" });
+    }
     res.json(data);
   }
   catch(err){
@@ -55,19 +62,27 @@ router.get("/category/:category",async(req,res) => {
   }
 });
 
-router.get("/single/:id",async(req,res) => {
-  try{
+router.get("/single/:id", async (req, res) => {
+  try {
     let id = req.params.id;
-  
-    let data = await ToysModel.find({_id:id})
-    
+
+    if (!id) {
+      return res.status(400).json({ msg: "No ID provided" });
+    }
+
+    let data = await ToysModel.findById(id);
+
+    if (!data) {
+      return res.status(404).json({ msg: "No data found for the provided ID" });
+    }
+
     res.json(data);
-  }
-  catch(err){
+  } catch (err) {
     console.log(err);
-    res.status(500).json({msg:"there error try again later",err})
+    res.status(500).json({ msg: "Error occurred, please try again later", err });
   }
-})
+});
+
 router.get("/prices", async (req, res) => {
   let perPage = req.query.perPage || 10;
   let page = req.query.page || 1;
@@ -108,7 +123,7 @@ router.post("/", auth,async(req,res) => {
   }
   catch(err){
     console.log(err);
-    res.status(500).json({msg:"there error try again later",err})
+    res.status(500).json({msg:"there is an error try again later",err})
   }
 })
 
@@ -130,7 +145,7 @@ router.put("/:editId",auth, async(req,res) => {
   }
   catch(err){
     console.log(err);
-    res.status(500).json({msg:"there error try again later",err})
+    res.status(500).json({msg:"there is an error try again later",err})
   }
 })
 
@@ -151,7 +166,7 @@ router.delete("/:delId",auth, async(req,res) => {
   }
   catch(err){
     console.log(err);
-    res.status(500).json({msg:"there error try again later",err})
+    res.status(500).json({msg:"there is an error try again later",err})
   }
 })
 
